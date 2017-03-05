@@ -26,7 +26,7 @@ android {
         }
     }
 
-    if(project.hasProperty("JavaTests.properties")
+    if (project.hasProperty("JavaTests.properties")
             && new File(project.property("JavaTests.properties")).exists()) {
 
         Properties props = new Properties()
@@ -51,6 +51,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     /*Testing*/
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-library:1.3'
