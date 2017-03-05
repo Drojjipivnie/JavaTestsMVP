@@ -1,6 +1,7 @@
 package com.drojj.javatests.injection.modules;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
@@ -21,5 +22,11 @@ public class AppModule {
     @Singleton
     Context provideContext() {
         return mContext;
+    }
+
+    @Provides
+    @Singleton
+    Resources provideResources(){
+        return mContext.getResources();
     }
 }
