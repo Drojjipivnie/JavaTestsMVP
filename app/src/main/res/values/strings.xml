@@ -6,4 +6,31 @@
     <string name="forget_password">Забыли пароль?</string>
     <string name="enter">Войти</string>
     <string name="still_no_account">Еще нет аккаунта? Создать</string>
+    <string name="loading">Загрузка…</string>
+
+    <string name="email_not_validated">Email введен неверно.</string>
+    <string name="password_not_entered">Введите пароль.</string>
+
+    <!--FirebaseAuthExceptions translation-->
+    <string name="error_user_disabled">Действие учетной записи приостановлено.</string>
+    <string name="error_user_not_found">Нет пользователя с таким email.</string>
+    <string name="error_wrong_password">Неверный пароль.</string>
+    <string name="error_email_already_in_use">Данный email уже используется.</string>
+    <string name="error_invalid_custom_token">The custom token format is incorrect. Please check the documentation.</string>
+    <string name="error_custom_token_mismatch">The custom token corresponds to a different audience.</string>
+    <string name="error_invalid_credential">The supplied auth credential is malformed or has expired.</string>
+    <string name="error_invalid_email">The email address is badly formatted.</string>
+    <string name="error_user_mismatch">The supplied credentials do not correspond to the previously signed in user.</string>
+    <string name="error_require_recent_login">This operation is sensitive and requires recent authentication. Log in again before retrying this request.</string>
+    <string name="error_account_exisits_with_different_credential">An account already exists with the same email address but different sign-in credentials. Sign in using a provider associated with this email address.</string>
+    <string name="error_credential_already_in_use">This credential is already associated with a different user account.</string>
+    <string name="error_user_token_expired">The user\'s credential is no longer valid. The user must sign in again.</string>
+    <string name="error_invalid_user_token">The user\'s credential is no longer valid. The user must sign in again.</string>
+    <string name="error_opertion_not_allowed">This operation is not allowed. You must enable this service in the console.</string>
+    <string name="error_weak_password">The given password is invalid.</string>
+    <!--FirebaseExceptions-->
+    <string name="error_default">Что - то пошло не так.</string>
+    <string name="error_too_many_requests">Слишком много запросов. Попробуйте чуть позже.</string>
+    <string name="error_network_exception">Проблемы со связью. Возможные причины: отсутствие подключения сети Интернет, таймаут подключения, прерванное подключение, недоступный хост.</string>
+    <string name="error_api_not_available">Сейчас сервис не доступен.</string>
 </resources>
