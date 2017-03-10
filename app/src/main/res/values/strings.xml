@@ -31,6 +31,6 @@
     <!--FirebaseExceptions-->
     <string name="error_default">Что - то пошло не так.</string>
     <string name="error_too_many_requests">Слишком много запросов. Попробуйте чуть позже.</string>
-    <string name="error_network_exception">Проблемы со связью. Возможные причины: отсутствие подключения сети Интернет, таймаут подключения, прерванное подключение, недоступный хост.</string>
+    <string name="error_network_exception">Проблемы со связью. Возможные причины:\n1. Отсутствует подключение сети Интернет\n2. Timeout подключения\n3. Прерванное подключение\n4. Недоступный хост.</string>
     <string name="error_api_not_available">Сейчас сервис не доступен.</string>
 </resources>
