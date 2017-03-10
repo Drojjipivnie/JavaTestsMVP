@@ -21,5 +21,15 @@
             android:name=".ui.activity.auth.SignInActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".ui.activity.HomeActivity" />
+
+        <activity
+            android:name=".ui.activity.auth.SignUpActivity"
+            android:parentActivityName=".ui.activity.auth.SignInActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.auth.SignInActivity" />
+        </activity>
     </application>
 </manifest>

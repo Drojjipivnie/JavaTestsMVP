@@ -50,4 +50,9 @@ public class SignUpActivity extends MvpActivity implements SignUpView {
     public void hideProgressDialog() {
 
     }
+
+    @Override
+    public void hideKeyboard() {
+
+    }
 }
