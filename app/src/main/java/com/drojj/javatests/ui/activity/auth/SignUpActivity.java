@@ -55,4 +55,9 @@ public class SignUpActivity extends MvpActivity implements SignUpView {
     public void hideKeyboard() {
 
     }
+
+    @Override
+    public void successSignUp() {
+
+    }
 }
