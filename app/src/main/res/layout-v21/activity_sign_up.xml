@@ -26,7 +26,6 @@
             android:layout_marginTop="56dp"
             android:contentDescription="@null"
             android:src="@drawable/logo"
-            android:transitionName="logoImage"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -114,7 +113,7 @@
             android:layout_marginRight="@dimen/sign_in_margins"
             android:layout_marginStart="@dimen/sign_in_margins"
             android:layout_marginTop="24dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/ripple_button"
             android:text="@string/registration"
             android:textAlignment="center"
             android:textColor="@android:color/white"

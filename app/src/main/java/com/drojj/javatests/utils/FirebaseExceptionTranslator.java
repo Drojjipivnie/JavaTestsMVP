@@ -16,11 +16,11 @@ public final class FirebaseExceptionTranslator {
             stringId = getAuthExceptionStringId((FirebaseAuthException) e);
         } else if (e instanceof FirebaseException) {
             if (e instanceof FirebaseTooManyRequestsException) {
-                stringId = getTooManyRequestsExceptionStringId((FirebaseTooManyRequestsException) e);
+                stringId = getTooManyRequestsExceptionStringId();
             } else if (e instanceof FirebaseNetworkException) {
-                stringId = getNetworkExceptionStringId((FirebaseNetworkException) e);
+                stringId = getNetworkExceptionStringId();
             } else if (e instanceof FirebaseApiNotAvailableException) {
-                stringId = getApiNotAvailableExceptionStringId((FirebaseApiNotAvailableException) e);
+                stringId = getApiNotAvailableExceptionStringId();
             } else {
                 return e.getLocalizedMessage();
             }
@@ -88,15 +88,15 @@ public final class FirebaseExceptionTranslator {
         return stringId;
     }
 
-    private static int getNetworkExceptionStringId(FirebaseNetworkException e) {
+    private static int getNetworkExceptionStringId() {
         return R.string.error_network_exception;
     }
 
-    private static int getTooManyRequestsExceptionStringId(FirebaseTooManyRequestsException e) {
+    private static int getTooManyRequestsExceptionStringId() {
         return R.string.error_too_many_requests;
     }
 
-    private static int getApiNotAvailableExceptionStringId(FirebaseApiNotAvailableException e) {
+    private static int getApiNotAvailableExceptionStringId() {
         return R.string.error_api_not_available;
     }
 }
