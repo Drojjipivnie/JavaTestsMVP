@@ -179,7 +179,7 @@ public class SignInActivity extends MvpActivity implements SignInView {
 
     @Override
     public void signUp() {
-        SignInActivity.this.startActivity(SignUpActivity.getIntent(this));
+        SignInActivity.this.startActivityForResult(SignUpActivity.getIntent(this), 1);
     }
 
 
@@ -196,6 +196,13 @@ public class SignInActivity extends MvpActivity implements SignInView {
     @OnClick(R.id.link_forgot_password)
     public void onForgotPasswordLinkClicked() {
         //TODO: call forgot password dialog
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == SignUpActivity.REGISTRED){
+            successSignIn();
+        }
     }
 
 }

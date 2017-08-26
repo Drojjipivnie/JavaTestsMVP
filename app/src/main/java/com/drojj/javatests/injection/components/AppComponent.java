@@ -4,6 +4,7 @@ import android.content.res.Resources;
 
 import com.drojj.javatests.injection.modules.AppModule;
 import com.drojj.javatests.presentation.presenter.auth.SignInPresenter;
+import com.drojj.javatests.presentation.presenter.auth.SignUpPresenter;
 
 import javax.inject.Singleton;
 
@@ -16,4 +17,6 @@ public interface AppComponent {
     Resources getResources();
 
     void inject(SignInPresenter presenter);
+
+    void inject(SignUpPresenter presenter);
 }

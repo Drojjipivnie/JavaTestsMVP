@@ -11,7 +11,11 @@
     <string name="registration">Регистрация</string>
 
     <string name="email_not_validated">Email введен неверно.</string>
+
     <string name="password_not_entered">Введите пароль.</string>
+    <string name="password_not_validated">Пароль должен состоять из букв латинского алфавита и хотя бы одной цифры;\nДлина пароля должна быть больше 6 знаков.</string>
+
+    <string name="name_not_validated">Обязательное поле. Имя должно состоять из 3 или более символов.</string>
 
     <!--FirebaseAuthExceptions translation-->
     <string name="error_user_disabled">Действие учетной записи приостановлено.</string>
