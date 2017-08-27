@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     signingConfigs {
@@ -82,14 +83,14 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
     /*ButterKnife*/
-    compile 'com.jakewharton:butterknife:8.5.1'
-    provided 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     /*Firebase*/
-    compile 'com.google.firebase:firebase-core:10.2.0'
+    compile 'com.google.firebase:firebase-core:11.2.0'
     //Auth//
-    compile 'com.google.firebase:firebase-auth:10.2.0'
+    compile 'com.google.firebase:firebase-auth:11.2.0'
     //Database//
-    compile 'com.google.firebase:firebase-database:10.2.0'
+    compile 'com.google.firebase:firebase-database:11.2.0'
     /*Timber Logging*/
     compile 'com.jakewharton.timber:timber:4.5.1'
 }
