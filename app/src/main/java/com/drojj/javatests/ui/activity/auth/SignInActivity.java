@@ -15,6 +15,7 @@ import com.drojj.javatests.R;
 import com.drojj.javatests.presentation.presenter.auth.SignInPresenter;
 import com.drojj.javatests.presentation.view.auth.SignInView;
 import com.drojj.javatests.ui.activity.HomeActivity;
+import com.drojj.javatests.ui.fragment.PasswordReminderDialog;
 import com.drojj.javatests.utils.ActivityUtils;
 
 import butterknife.BindString;
@@ -161,7 +162,7 @@ public class SignInActivity extends MvpActivity implements SignInView {
 
     @Override
     public void showReminderDialog() {
-
+        PasswordReminderDialog.newInstance().show(this.getFragmentManager(), PasswordReminderDialog.TAG);
     }
 
     @Override
@@ -195,7 +196,7 @@ public class SignInActivity extends MvpActivity implements SignInView {
 
     @OnClick(R.id.link_forgot_password)
     public void onForgotPasswordLinkClicked() {
-        //TODO: call forgot password dialog
+        showReminderDialog();
     }
 
     @Override

@@ -165,4 +165,13 @@ public class SignUpActivity extends MvpActivity implements SignUpView {
     public void onLoginButtonClicked() {
         mSignUpPresenter.signUp(mInputName.getText().toString(), mInputEmail.getText().toString(), mInputPassword.getText().toString());
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+        }
+        mViewUnbinder.unbind();
+    }
 }

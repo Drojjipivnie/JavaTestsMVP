@@ -17,6 +17,14 @@
 
     <string name="name_not_validated">Обязательное поле. Имя должно состоять из 3 или более символов.</string>
 
+    <!--PasswordReminderDialog-->
+    <string name="please_wait">Подождите пожалуйста…</string>
+    <string name="remember_password_title_dialog">Вспомнить пароль</string>
+    <string name="send">Отправить</string>
+    <string name="cancel">Отменить</string>
+    <string name="send_reminder_password">Успешно! Мы отправили вам сообщение.</string>
+    <string name="reminder_email_not_validated">Email введен неверно.</string>
+
     <!--FirebaseAuthExceptions translation-->
     <string name="error_user_disabled">Действие учетной записи приостановлено.</string>
     <string name="error_user_not_found">Нет пользователя с таким email.</string>
