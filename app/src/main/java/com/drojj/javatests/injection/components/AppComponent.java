@@ -2,6 +2,7 @@ package com.drojj.javatests.injection.components;
 
 import android.content.res.Resources;
 
+import com.drojj.javatests.database.DatabaseInstaller;
 import com.drojj.javatests.injection.modules.AppModule;
 import com.drojj.javatests.presentation.presenter.PasswordReminderDialogPresenter;
 import com.drojj.javatests.presentation.presenter.auth.SignInPresenter;
@@ -22,4 +23,6 @@ public interface AppComponent {
     void inject(SignUpPresenter presenter);
 
     void inject(PasswordReminderDialogPresenter presenter);
+
+    void inject(DatabaseInstaller databaseInstaller);
 }

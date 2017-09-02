@@ -17,6 +17,9 @@
 
     <string name="name_not_validated">Обязательное поле. Имя должно состоять из 3 или более символов.</string>
 
+    <!--SplashActivity-->
+    <string name="database_installer_error">Произошла ошибка установки базы данных: %1$s </string>
+
     <!--PasswordReminderDialog-->
     <string name="please_wait">Подождите пожалуйста…</string>
     <string name="remember_password_title_dialog">Вспомнить пароль</string>
