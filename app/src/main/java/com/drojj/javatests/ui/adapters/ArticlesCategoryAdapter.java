@@ -25,8 +25,11 @@ public class ArticlesCategoryAdapter extends RecyclerView.Adapter<ArticlesCatego
 
     private final List<ArticleCategoryItem> mItems;
 
-    public ArticlesCategoryAdapter(List<ArticleCategoryItem> mItems) {
+    private final OnRecyclerItemClickListener<ArticleCategoryItem> mClickListener;
+
+    public ArticlesCategoryAdapter(List<ArticleCategoryItem> mItems, OnRecyclerItemClickListener<ArticleCategoryItem> clickListener) {
         this.mItems = mItems;
+        mClickListener = clickListener;
         mResources = App.getAppComponent().getResources();
     }
 
@@ -39,6 +42,7 @@ public class ArticlesCategoryAdapter extends RecyclerView.Adapter<ArticlesCatego
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ArticleCategoryItem item = mItems.get(position);
+        holder.itemView.setOnClickListener(v -> mClickListener.onClick(mItems.get(position)));
         holder.articleCategoryItemName.setText(item.getName());
         holder.articleCategoryItemDescription.setText(item.getDescription());
         try {

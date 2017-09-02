@@ -23,6 +23,8 @@ import com.drojj.javatests.presentation.presenter.HomePresenter;
 import com.drojj.javatests.presentation.view.HomeView;
 import com.drojj.javatests.ui.activity.auth.SignInActivity;
 import com.drojj.javatests.ui.fragment.ArticleCategoryFragment;
+import com.drojj.javatests.ui.fragment.ArticleFragment;
+import com.drojj.javatests.ui.fragment.ArticleListFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -63,6 +65,10 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
             switch (screenKey) {
                 case ArticleCategoryFragment.TAG:
                     return ArticleCategoryFragment.newInstance();
+                case ArticleListFragment.TAG:
+                    return ArticleListFragment.newInstance((Bundle) data);
+                case ArticleFragment.TAG:
+                    return ArticleFragment.newInstance((Bundle) data);
                 default:
                     throw new RuntimeException("Unknown screen key");
             }

@@ -7,19 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.drojj.javatests.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
-public abstract class BaselRecyclerViewFragment extends MvpAppCompatFragment {
+public abstract class BaselRecyclerViewFragment extends BaseFragment {
 
     @BindView(R.id.fragment_recycle_view)
     protected RecyclerView mRecycleView;
-
-    private Unbinder mUnbinder;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
@@ -34,12 +30,6 @@ public abstract class BaselRecyclerViewFragment extends MvpAppCompatFragment {
         super.onViewCreated(view, savedInstanceState);
         mRecycleView.setHasFixedSize(true);
         mRecycleView.setLayoutManager(getLayoutManager());
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        mUnbinder.unbind();
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
