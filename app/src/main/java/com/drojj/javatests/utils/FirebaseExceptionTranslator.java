@@ -28,7 +28,7 @@ public final class FirebaseExceptionTranslator {
             return e.getLocalizedMessage();
         }
 
-        return App.getComponent().getResources().getString(stringId);
+        return App.getAppComponent().getResources().getString(stringId);
     }
 
     private static int getAuthExceptionStringId(FirebaseAuthException e) {

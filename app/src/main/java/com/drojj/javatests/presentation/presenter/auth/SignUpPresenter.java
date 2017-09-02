@@ -35,7 +35,7 @@ public class SignUpPresenter extends MvpPresenter<SignUpView> implements OnCompl
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
-        App.getComponent().inject(this);
+        App.getAppComponent().inject(this);
     }
 
     public void signUp(String name, String email, String password) {

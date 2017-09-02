@@ -25,7 +25,7 @@ public class PasswordReminderDialogPresenter extends MvpPresenter<PasswordRemind
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
-        App.getComponent().inject(this);
+        App.getAppComponent().inject(this);
     }
 
     public void sendReminderRequest(String email) {

@@ -25,6 +25,14 @@
     <string name="send_reminder_password">Успешно! Мы отправили вам сообщение.</string>
     <string name="reminder_email_not_validated">Email введен неверно.</string>
 
+    <!--Navigation Menu-->
+    <string name="navigation_menu_tests">Тесты</string>
+    <string name="navigation_menu_questions">Вопросы к интервью</string>
+    <string name="navigation_menu_articles">Статьи</string>
+    <string name="navigation_menu_about">О приложении</string>
+    <string name="navigation_menu_like">Оценить</string>
+    <string name="navigation_menu_logout">Выйти из профиля</string>
+
     <!--FirebaseAuthExceptions translation-->
     <string name="error_user_disabled">Действие учетной записи приостановлено.</string>
     <string name="error_user_not_found">Нет пользователя с таким email.</string>
