@@ -26,11 +26,11 @@ public class DatabaseInstaller {
 
     private static final String APP_PREFERENCES_DB_SETTING = "database_version";
 
-    private final static String mDatabaseName = "Database.db";
-
-    private final static String mAssetsDatabasePath = "database/" + mDatabaseName;
+    private final static String mAssetsDatabasePath = "database/" + AppDatabase.DATABASE_NAME;
 
     private final String mLocalDatabasePath;
+
+    private final String mDatabaseName = AppDatabase.DATABASE_NAME;
 
     public DatabaseInstaller() {
         App.getAppComponent().inject(this);

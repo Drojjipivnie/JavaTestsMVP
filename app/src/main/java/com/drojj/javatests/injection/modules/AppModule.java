@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 
+import com.drojj.javatests.database.AppDatabase;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -26,7 +28,13 @@ public class AppModule {
 
     @Provides
     @Singleton
-    Resources provideResources(){
+    Resources provideResources() {
         return mContext.getResources();
+    }
+
+    @Provides
+    @Singleton
+    AppDatabase provideDatabase() {
+        return new AppDatabase(mContext);
     }
 }

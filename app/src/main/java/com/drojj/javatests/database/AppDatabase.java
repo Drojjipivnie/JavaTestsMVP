@@ -8,10 +8,12 @@ import com.drojj.javatests.BuildConfig;
 
 public class AppDatabase extends SQLiteOpenHelper {
 
-    public static final int VERSION = BuildConfig.VERSION_CODE;
+    static final int VERSION = BuildConfig.VERSION_CODE;
 
-    public AppDatabase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    static final String DATABASE_NAME = "Database.db";
+
+    public AppDatabase(Context context) {
+        super(context, DATABASE_NAME, null, VERSION);
     }
 
     @Override
