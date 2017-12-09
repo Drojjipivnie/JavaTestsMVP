@@ -13,4 +13,6 @@
     <dimen name="article_category_item_name_size">13sp</dimen>
     <dimen name="article_category_item_description_size">11sp</dimen>
 
+    <!--Activity Main-->
+    <dimen name="activity_main_progress_bar">8dp</dimen>
 </resources>

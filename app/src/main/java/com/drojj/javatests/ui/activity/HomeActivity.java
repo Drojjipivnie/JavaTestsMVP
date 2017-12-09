@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,9 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
 
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+
+    @BindView(R.id.progress_bar_main)
+    ProgressBar mProgressBar;
 
     @Inject
     NavigatorHolder navigatorHolder;
@@ -96,6 +100,9 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
         return new Intent(context, HomeActivity.class);
     }
 
+    public HomePresenter getHomePresenter() {
+        return mHomePresenter;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,5 +170,15 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
     protected void onDestroy() {
         mUnbinder.unbind();
         super.onDestroy();
+    }
+
+    @Override
+    public void showProgressBar() {
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void dismissProgressBar() {
+        mProgressBar.setVisibility(View.INVISIBLE);
     }
 }

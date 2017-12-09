@@ -21,6 +21,14 @@ public class HomePresenter extends MvpPresenter<HomeView> {
     }
 
     public void exitToSignInScreen() {
-        router.exit();
+        router.finishChain();
+    }
+
+    public void showProgressBar(){
+        getViewState().showProgressBar();
+    }
+
+    public void dismissProgressBar(){
+        getViewState().dismissProgressBar();
     }
 }

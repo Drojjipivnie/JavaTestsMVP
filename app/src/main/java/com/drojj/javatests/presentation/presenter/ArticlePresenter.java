@@ -5,9 +5,11 @@ import com.arellomobile.mvp.MvpPresenter;
 import com.drojj.javatests.database.ArticlesDAO;
 import com.drojj.javatests.model.articles.item.Article;
 import com.drojj.javatests.presentation.view.ArticleView;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 @InjectViewState
 public class ArticlePresenter extends MvpPresenter<ArticleView> {
@@ -24,14 +26,16 @@ public class ArticlePresenter extends MvpPresenter<ArticleView> {
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
+        getArticle().subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(article -> {
+            mArticle = article;
+            getViewState().buildArticleView(article.getDrawables());
+        });
+    }
 
-        String json = new ArticlesDAO().getArticleJSON(mArticleId);
-        try {
-            mArticle = new ObjectMapper().readValue(json, Article.class);
-        } catch (IOException e) {
-            throw new RuntimeException("Error parsing json", e);
-        }
-
-        getViewState().buildArticleView(mArticle.getDrawables());
+    private Observable<Article> getArticle() {
+        return Observable.defer(() -> {
+            Article article = new GsonBuilder().create().fromJson(new ArticlesDAO().getArticleJSON(mArticleId), Article.class);
+            return Observable.just(article);
+        });
     }
 }

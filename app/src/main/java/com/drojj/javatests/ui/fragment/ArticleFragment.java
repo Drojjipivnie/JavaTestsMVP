@@ -30,6 +30,7 @@ public class ArticleFragment extends BaseFragment implements ArticleView {
 
     @ProvidePresenter
     ArticlePresenter providePresenter() {
+        getHomePresenter().showProgressBar();
         int articleId = getArguments().getInt("article_id");
         return new ArticlePresenter(articleId);
     }
@@ -53,6 +54,7 @@ public class ArticleFragment extends BaseFragment implements ArticleView {
         for (Drawable drawable : drawables) {
             mArticleRootLayout.addView(drawable.getView(getContext()));
         }
+        getHomePresenter().dismissProgressBar();
     }
 
     @Override
