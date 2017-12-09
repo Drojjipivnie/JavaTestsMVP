@@ -31,6 +31,7 @@
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_main_progress_bar"
+                android:layout_marginTop="@dimen/activity_main_progress_bar_negative"
                 android:indeterminate="true"
                 android:visibility="invisible" />
 

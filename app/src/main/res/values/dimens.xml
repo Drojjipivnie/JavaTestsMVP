@@ -15,4 +15,5 @@
 
     <!--Activity Main-->
     <dimen name="activity_main_progress_bar">8dp</dimen>
+    <dimen name="activity_main_progress_bar_negative">-8dp</dimen>
 </resources>
