@@ -16,4 +16,9 @@
     <!--Activity Main-->
     <dimen name="activity_main_progress_bar">8dp</dimen>
     <dimen name="activity_main_progress_bar_negative">-8dp</dimen>
+
+    <!--Article List Item-->
+    <dimen name="article_list_item_card_height">70dp</dimen>
+    <dimen name="article_list_item_image_dp">70dp</dimen>
+    <dimen name="article_list_item_image_margin_right">4dp</dimen>
 </resources>

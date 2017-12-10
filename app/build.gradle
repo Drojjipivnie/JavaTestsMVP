@@ -99,6 +99,8 @@ dependencies {
     compile 'ru.terrakok.cicerone:cicerone:2.1.0'
     /*JSON Parcer*/
     compile 'com.google.code.gson:gson:2.8.2'
+    /*Text Drawable*/
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
