@@ -4,6 +4,7 @@ import com.drojj.javatests.app.App;
 import com.drojj.javatests.presentation.view.HomeView;
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+import com.google.firebase.auth.FirebaseAuth;
 
 import javax.inject.Inject;
 
@@ -21,7 +22,8 @@ public class HomePresenter extends MvpPresenter<HomeView> {
     }
 
     public void exitToSignInScreen() {
-        router.finishChain();
+        FirebaseAuth.getInstance().signOut();
+        getViewState().startSignInActivity();
     }
 
     public void showProgressBar(){

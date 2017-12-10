@@ -3,6 +3,7 @@ package com.drojj.javatests.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,7 @@ import butterknife.Unbinder;
 import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.android.SupportFragmentNavigator;
+import ru.terrakok.cicerone.commands.Back;
 import ru.terrakok.cicerone.commands.Command;
 import ru.terrakok.cicerone.commands.Replace;
 
@@ -63,6 +65,8 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
 
     private Unbinder mUnbinder;
 
+    private boolean mDoubleBackToExitPressedOnce = false;
+
     private Navigator navigator = new SupportFragmentNavigator(getSupportFragmentManager(), R.id.fragment_container_main) {
         @Override
         protected Fragment createFragment(String screenKey, Object data) {
@@ -85,9 +89,14 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
 
         @Override
         protected void exit() {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(SignInActivity.getIntent(HomeActivity.this));
-            HomeActivity.this.finish();
+            if (mDoubleBackToExitPressedOnce) {
+                goHome();
+                return;
+            }
+
+            mDoubleBackToExitPressedOnce = true;
+            Toast.makeText(HomeActivity.this, R.string.double_back_to_exit, Toast.LENGTH_SHORT).show();
+            new Handler().postDelayed(() -> mDoubleBackToExitPressedOnce = false, 2000);
         }
 
         @Override
@@ -150,7 +159,7 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawers();
         } else {
-            super.onBackPressed();
+            navigator.applyCommand(new Back());
         }
     }
 
@@ -180,5 +189,18 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView, Navi
     @Override
     public void dismissProgressBar() {
         mProgressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void startSignInActivity() {
+        startActivity(SignInActivity.getIntent(HomeActivity.this));
+        HomeActivity.this.finish();
+    }
+
+    private void goHome() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
